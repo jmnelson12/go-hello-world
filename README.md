@@ -21,7 +21,10 @@ $ docker run -d -p 8080:8080 --name go-hello-world jmnelson12/go-hello-world
 
 ### K8S Setup
 
-https://medium.com/swlh/how-to-run-locally-built-docker-images-in-kubernetes-b28fbc32cc1d
+Helpful Links:
+
+- [How to Run Locally Built Docker Images in Kubernetes - Sergei](https://medium.com/swlh/how-to-run-locally-built-docker-images-in-kubernetes-b28fbc32cc1d)
+- [Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours] - TechWorld with Nana](https://www.youtube.com/watch?v=X48VuDVv0do&ab_channel=TechWorldwithNana)
 
 ```bash
 $ minikube start
