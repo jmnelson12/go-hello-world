@@ -11,6 +11,8 @@
 ## TODO
 
 - need to figure out ports and how to set them up through env var
+- add goodbye world service
+- expand empire...
 
 ### Docker Setup
 
