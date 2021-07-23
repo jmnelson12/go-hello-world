@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+  labels:
+    app: hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+        - name: hello-world
+          image: jmnelson12/go-hello-world
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-service
+spec:
+  selector:
+    app: hello-world # connect to pod through label
+  # makes it external service (1/2). Assigns service an external
+  # IP address and so accepts external requests
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8080 # service port
+      targetPort: 8080 # containerPort of deployment
+      # makes it external service (2/2).
+      # port to put into browser to access. range (30000-32000)
+      nodePort: 30002
